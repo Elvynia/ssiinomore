@@ -1,0 +1,14 @@
+{
+  "name": "ssiinomore",
+  "version": "0.0.1",
+  "description": "Projet Node.js permettant de construire une interface utilisateur orientée Web components.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
