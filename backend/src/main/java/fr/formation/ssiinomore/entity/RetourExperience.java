@@ -28,8 +28,7 @@ public class RetourExperience {
 
 	public void setDuree(int duree) {
 		this.duree = duree;
-	}
-	
+	}	
 
     public int getId() {
 		return id;
@@ -37,9 +36,7 @@ public class RetourExperience {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	
+	}	
 
 	public String getStatutContractuel() {
 		return statutContractuel;
