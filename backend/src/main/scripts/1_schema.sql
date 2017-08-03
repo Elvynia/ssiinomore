@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `ssiinomore`
+CREATE DATABASE  IF NOT EXISTS `ssiinomore`;
 USE `ssiinomore`;
 
 
@@ -39,7 +39,7 @@ CREATE TABLE `entreprise` (
   `sigle` varchar(20),
   `codePostal` int(5) NOT NULL,
   `ville` varchar(50) NOT NULL,
-  `radie` tinyint(1), NOT NULL,
+  `radie` tinyint(1) NOT NULL,
   `nbRecherches` int(5) NOT NULL,
   
   PRIMARY KEY (`siren`)
@@ -64,4 +64,3 @@ CREATE TABLE `evaluation` (
   CONSTRAINT `FK_EVALUATION_ENTREPRISE` FOREIGN KEY (`siren_entreprise`) REFERENCES `entreprise` (`siren`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_EVALUATION_UTILISATEUR` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
