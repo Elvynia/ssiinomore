@@ -1,23 +1,55 @@
 
 package fr.formation.ssiinomore.entity;
 
+import java.sql.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 /**
  * 
  */
+
+@Entity
+@Table(name = "evaluation")
 public class Evaluation {
 
    
-    private int id;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
     
-    private String date;
+	@Column
+	private Date date;
+
+	@ManyToOne
+	@JoinColumn(name="siren_entreprise", referencedColumnName="riren")	
+	private Entreprise entreprise;    
+
+	@ManyToOne
+	@JoinColumn(name="id_utilisateur", referencedColumnName="id")	
+	private Utilisateur utilisateur; 
     
-    private Entreprise entreprise;
+	@Column
+	private int nbSignalements;
+	
+	@Column
+	private int duree;
     
-    private RetourExperience retourExperience;
+	@Column
+	private String statutContractuel;
     
-    private Utilisateur utilisateur; 
+	@Column
+	private String posteOccupe;
     
-    private int nbSignalements;
+	@Column
+	private int avis;
     
     /**
      * Default constructor
@@ -32,14 +64,6 @@ public class Evaluation {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	public String getDate() {
-		return date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
-	}
 
 	public Entreprise getEntreprise() {
 		return entreprise;
@@ -47,14 +71,6 @@ public class Evaluation {
 
 	public void setEntreprise(Entreprise entreprise) {
 		this.entreprise = entreprise;
-	}
-
-	public RetourExperience getRetourExperience() {
-		return retourExperience;
-	}
-
-	public void setRetourExperience(RetourExperience retourExperience) {
-		this.retourExperience = retourExperience;
 	}
 
 	public Utilisateur getUtilisateur() {
@@ -71,5 +87,45 @@ public class Evaluation {
 
 	public void setNbSignalements(int nbSignalements) {
 		this.nbSignalements = nbSignalements;
+	}
+	
+	 public int getDuree() {
+			return duree;
+		}
+
+	public void setDuree(int duree) {
+		this.duree = duree;
+	}
+   
+	public String getStatutContractuel() {
+		return statutContractuel;
+	}
+
+	public void setStatutContractuel(String statutContractuel) {
+		this.statutContractuel = statutContractuel;
+	}
+
+	public String getPosteOccupe() {
+		return posteOccupe;
+	}
+
+	public void setPosteOccupe(String posteOccupe) {
+		this.posteOccupe = posteOccupe;
+	}
+
+	public int getAvis() {
+		return avis;
+	}
+
+	public void setAvis(int avis) {
+		this.avis = avis;
+	}
+	
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 }
