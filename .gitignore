@@ -17,4 +17,6 @@ buildNumber.properties
 
 # Node
 node_modules/
+dist/
 *.log
+*.ngsummary.json
