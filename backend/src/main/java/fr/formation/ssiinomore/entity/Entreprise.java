@@ -21,7 +21,7 @@ public class Entreprise {
 	@Id	
     private int siren;
     
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="evaluation", cascade={CascadeType.REMOVE})
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="entreprise", cascade={CascadeType.REMOVE})
 	private List<Evaluation> evaluations;
     
 	@Column

@@ -28,7 +28,7 @@ public class Role {
 	@Column
 	private String intitule;
 	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="utilisateur", cascade={CascadeType.REMOVE})	
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="role", cascade={CascadeType.REMOVE})	
 	private List<Utilisateur> utilisateurs;
 	
 	 /**

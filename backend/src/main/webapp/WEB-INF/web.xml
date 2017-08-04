@@ -26,6 +26,9 @@
 	<servlet-mapping>
 		<servlet-name>JSF Servlet</servlet-name>
 		<url-pattern>/faces/</url-pattern>
+		<url-pattern>*.xhtml</url-pattern>
+		<url-pattern>*.html</url-pattern>
+		<url-pattern>*.jsf</url-pattern>
 	</servlet-mapping>
 
 	<filter>
@@ -45,9 +48,5 @@
 		<filter-name>EncodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-
-	<welcome-file-list>
-		<welcome-file>views/index.html</welcome-file>
-	</welcome-file-list>
 
 </web-app>

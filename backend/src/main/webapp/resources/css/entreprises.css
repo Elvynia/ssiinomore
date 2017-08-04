@@ -1,0 +1,117 @@
+#main_topflop h3, .moreentreprise {
+	text-align: center;
+}
+
+#main_topflop h3 {
+	margin-bottom: 20px
+}
+
+.moreentreprise {
+	padding-top: 10px;
+	margin-top: 10px;
+	border-top: 1px dotted #aaa;
+}
+
+#tab_top10 tr {
+	background-color: rgba(96, 125, 139, 0.18);
+}
+
+#tab_top10 tr:nth-child(2n) {
+	background-color: rgba(96, 125, 139, 0.55);
+}
+
+#tab_flop10 tr {
+	background-color: rgba(139, 96, 96, 0.18);
+}
+
+#tab_flop10 tr:nth-child(2n) {
+	background-color: rgba(139, 96, 96, 0.55);
+}
+/* Colonne 2 des tableaux => entreprises */
+#tab_top10 tr td:nth-child(2n), #tab_flop10 tr td:nth-child(2n) {
+	width: 250px;
+}
+
+/***************************************
+ * Top 10 et Flop 10 
+ * 
+ ***************************************/
+#tab_top10 {
+	clear: both;
+}
+
+#tab_top10, #tab_flop10 {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	float: left;
+	width: 450px;
+	border: 1px solid #ccc;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 2px 4px 8px #ccc;
+}
+
+#tab_top10 td, #tab_flop10 td {
+	padding: 5px;
+}
+
+/***************************************
+ *
+ * Ajout d'une entreprise 
+ *
+****************************************/
+label[for="entreprise"], label[for="typecontrat"] {
+	width: 150px;
+	display: inline-block;
+	padding-left: 30px;
+}
+
+#grosbloc_add {
+	border: 1px solid #ccc;
+	width: 80%;
+	margin: 20px auto;
+	border-radius: 5px;
+	box-shadow: 5px 5px 20px #ccc;
+}
+
+#grosbloc_add h3 {
+	padding: 20px;
+	display: block;
+	font-size: 150%
+}
+
+#grosbloc_add  label {
+	line-height: 2.5em
+}
+
+/* Décalage pour les années  */
+#grosbloc_add input[name="duree_mois"] {
+	margin-left: 20px;
+}
+/* Décalage pour le poste (simulation d'une tabulation / colonne) */
+#grosbloc_add input[name="poste"] {
+	margin-left: 65px;
+}
+/* Décalage pour les images smiley (simulation d'une tabulation / colonne) */
+#grosbloc_add label[for="avis"] {
+	margin-right: 65px;
+}
+
+#ajout_actions {
+	clear: both;
+	display: block;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#ajout_actions input {
+	padding: 10px;
+	margin: 0 20px;
+}
+
+.colonne {
+	float: left;
+	width: 400px;
+	margin-bottom: 15px;
+}

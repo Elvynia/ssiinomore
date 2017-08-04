@@ -1,0 +1,89 @@
+/*
+ * Partie générale 
+ *
+ */
+* {
+	padding: 0;
+	margin: 0
+}
+
+body {
+	background-color: rgb(96, 125, 139);
+	font-family: Arial, sans-serif;
+	font-size: 0.8em;
+}
+
+a {
+	text-decoration: underline;
+	color: #666;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #333;
+}
+
+#site {
+	border: 2px solid #666;
+	background-color: white;
+	width: 1080px;
+	margin: 0 auto;
+}
+
+header {
+	padding-top: 20px;
+}
+
+#logo {
+	background: url("#{resource['img/logo.png']}") 10px no-repeat;
+	width: 120px;
+	height: 120px;
+	background-size: 110px;
+	float: left;
+	margin-right: 20px;
+}
+
+header {
+	position: relative;
+}
+
+/*
+ * La partie menu et navigation (haut) 
+ *
+ */
+#menu {
+	float: left;
+	display: block;
+	height: 20px;
+	margin-top: 10px;
+}
+
+#menu li {
+	border: 1px solid black;
+	display: inline-block;
+	padding: 10px;
+	box-shadow: 2px 4px 8px #3d535d;
+	border-radius: 5px;
+	margin: 0 5px;
+}
+
+#menu li a {
+	display: block;
+}
+
+#menu a {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 105%
+}
+
+#menu li {
+	background-image: linear-gradient(rgba(136, 200, 228, 0.68), #4d9ec1);
+	border: 1px solid #9e9e9e;
+}
+
+/* Intégration d'une bordure entre le header et le main */
+#main {
+	border-top: 20px solid rgba(255, 235, 59, 0.62);
+}

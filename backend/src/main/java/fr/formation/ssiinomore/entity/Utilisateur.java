@@ -34,7 +34,7 @@ public class Utilisateur {
 	@Column
 	private String adresseIP;
    
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="evaluation", cascade={CascadeType.REMOVE})
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="utilisateur", cascade={CascadeType.REMOVE})
 	private List<Evaluation> evaluations;    
     
 	@ManyToOne
