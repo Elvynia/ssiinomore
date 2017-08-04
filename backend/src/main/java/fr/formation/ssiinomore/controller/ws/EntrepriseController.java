@@ -18,7 +18,7 @@ import fr.formation.ssiinomore.entity.Entreprise;
 import fr.formation.ssiinomore.service.EntrepriseService;
 
 @RestController
-@RequestMapping("/api/entreprise")
+@RequestMapping("/entreprise")
 public class EntrepriseController {
 	
 	@Autowired
