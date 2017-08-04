@@ -13,11 +13,14 @@
 	http://www.springframework.org/schema/mvc
 	http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
 	
-	<context:component-scan base-package="fr.formation.ssiinomore.controller.ws"/>	
+	<context:component-scan base-package="fr.formation.ssiinomore.controller.ws, fr.formation.ssiinomore.service"/>	
 	<bean id="messageSource" 
 		class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basenames" value="message"/>	
 	</bean>
+	
+	<mvc:annotation-driven />
+	
 	
 	<bean id="entityManagerFactory" 
 		class ="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
