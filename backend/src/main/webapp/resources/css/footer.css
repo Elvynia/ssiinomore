@@ -1,0 +1,21 @@
+footer {
+	clear: both;
+	border-top: 1px solid #ccc;
+	padding: 20px;
+	text-align: center;
+	padding-top: 50px;
+	margin-top: 20px;
+	display: block;
+	background-color: #373736;
+	color: white;
+}
+
+footer a {
+	color: #cdcdcd;
+	display: inline-block;
+	padding: 0 5px;
+}
+
+footer a:hover {
+	color: #eaeaea;
+}
