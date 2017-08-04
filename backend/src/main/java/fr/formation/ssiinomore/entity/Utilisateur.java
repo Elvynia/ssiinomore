@@ -1,38 +1,70 @@
 
 package fr.formation.ssiinomore.entity;
 
+
+import java.sql.Date;
 import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+
 
 /**
  * 
  */
+
+@Entity
+@Table(name = "utilisateur")
 public class Utilisateur {
-   
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)   
     private int id;
-	private List<String> adresseIP;
-
-    private List<Evaluation> evaluations;
-
+	
+	@Column
+	private String adresseIP;
+   
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="evaluation", cascade={CascadeType.REMOVE})
+	private List<Evaluation> evaluations;    
+    
+	@ManyToOne
+	@JoinColumn(name="id_role", referencedColumnName="id")	
     private Role role;
 
+    @Column
     private String nom;
 
+    @Column
     private String prenom;
 
-    private String dateInscription;
-
+    @Column
+    private Date dateInscription;
+    
+    @Column
     private String login;
 
+    @Column
     private String password;
 
+    @Column
     private boolean actif;
+    
     
     /**
      * Default constructor
      */
     public Utilisateur() {
     }
-
     
     public int getId() {
 		return id;
@@ -40,16 +72,16 @@ public class Utilisateur {
 
 	public void setId(int id) {
 		this.id = id;
+	}    
+
+    public Date getDateInscription() {
+		return dateInscription;
 	}
 
-	public List<String> getAdresseIP() {
-		return adresseIP;
-	}
-
-	public void setAdresseIP(List<String> adresseIP) {
-		this.adresseIP = adresseIP;
-	}
-
+	public void setDateInscription(Date dateInscription) {
+		this.dateInscription = dateInscription;
+	}   
+	
 	public List<Evaluation> getEvaluations() {
 		return evaluations;
 	}
@@ -82,14 +114,7 @@ public class Utilisateur {
 		this.prenom = prenom;
 	}
 
-	public String getDateInscription() {
-		return dateInscription;
-	}
-
-	public void setDateInscription(String dateInscription) {
-		this.dateInscription = dateInscription;
-	}
-
+	
 	public String getLogin() {
 		return login;
 	}
@@ -112,6 +137,16 @@ public class Utilisateur {
 
 	public void setActif(boolean actif) {
 		this.actif = actif;
-	}
+	} 
+	
+	 public String getAdresseIP() {
+			return adresseIP;
+		}
+
+
+		public void setAdresseIP(String adresseIP) {
+			this.adresseIP = adresseIP;
+		}
+
 
 }

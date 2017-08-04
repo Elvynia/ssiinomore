@@ -3,26 +3,44 @@ package fr.formation.ssiinomore.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
 /**
  * 
  */
-public class Entreprise {	
-	 
+@Entity
+@Table(name = "entreprise")
+public class Entreprise {
+	
+	@Id	
     private int siren;
     
-    private List<Evaluation> evaluations;
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="evaluation", cascade={CascadeType.REMOVE})
+	private List<Evaluation> evaluations;
     
+	@Column
     private String nom;
     
+	@Column
     private String sigle;
     
-    private int codePostal;
+	@Column
+	private int codePostal;
     
-    private String ville;
+	@Column
+	private String ville;
     
-    private boolean radie;
+	@Column
+	private boolean radie;
     
-    private int nbRecherches;
+	@Column
+	private int nbRecherches;
     
     /**
      * Default constructor
