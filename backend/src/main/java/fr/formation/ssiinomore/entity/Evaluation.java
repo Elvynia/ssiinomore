@@ -26,10 +26,10 @@ public class Evaluation {
 	private int id;
     
 	@Column
-	private Date date;
+	private Date dateEval;
 
 	@ManyToOne
-	@JoinColumn(name="siren_entreprise", referencedColumnName="riren")	
+	@JoinColumn(name="siren_entreprise", referencedColumnName="siren")	
 	private Entreprise entreprise;    
 
 	@ManyToOne
@@ -121,11 +121,11 @@ public class Evaluation {
 		this.avis = avis;
 	}
 	
-	public Date getDate() {
-		return date;
+	public Date getDateEval() {
+		return dateEval;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDateEval(Date dateEval) {
+		this.dateEval = dateEval;
 	}
 }
