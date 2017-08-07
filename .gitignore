@@ -20,3 +20,4 @@ node_modules/
 dist/
 *.log
 *.ngsummary.json
+frontend/node/
