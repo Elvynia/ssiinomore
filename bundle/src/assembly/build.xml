@@ -6,7 +6,7 @@
 	<includeBaseDirectory>false</includeBaseDirectory>
 	<fileSets>
 		<fileSet>
-			<directory>backend/target/ssiinomore</directory>
+			<directory>../backend/target/ssiinomore</directory>
 			<outputDirectory>/</outputDirectory>
 			<includes>
 				<include>**/**</include>
@@ -15,7 +15,7 @@
 	</fileSets>
 	<files>
 		<file>
-			<source>frontend/dist/bundles/ssiinomore.umd.min.js</source>
+			<source>../frontend/dist/bundles/ssiinomore.umd.min.js</source>
 			<outputDirectory>/resources/js/</outputDirectory>
 		</file>
 	</files>

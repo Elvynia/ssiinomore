@@ -4,6 +4,8 @@
  ***************************************/
 #company-lists {
 	display: inline-flex;
+	width: 100%;
+	margin: auto;
 }
 
 #company-lists h3 {
@@ -14,8 +16,12 @@
 	text-align: center;
 }
 
-.company-list {
+company-list {
 	flex: 1;
+	max-width: 50%;
+}
+
+.company-list {
 	margin-left: 10px;
 	margin-right: 10px;
 	margin-bottom: 20px;

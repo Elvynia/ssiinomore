@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 	selector: 'company-add',
 	template: `
 		<div id="grosbloc_add">
-		<h3>Ajouter une entreprise</h3>
+		<h3>Evaluer une entreprise</h3>
 		<div class="colonne">
 			<label for="entreprise">Liste des entreprises :</label>
 			<select>
