@@ -2,9 +2,17 @@
  * Partie générale 
  *
  */
-* {
+#site h1, #site h2, #menu ul {
 	padding: 0;
-	margin: 0
+	margin: 0;
+}
+
+#site h1 {
+	font-size: 2rem;
+}
+
+#site h2 {
+	font-size: 1.5rem;
 }
 
 body {
@@ -87,3 +95,5 @@ header {
 #main {
 	border-top: 20px solid rgba(255, 235, 59, 0.62);
 }
+
+#menu li:hover {opacity: 0.75}

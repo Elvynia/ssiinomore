@@ -23,7 +23,7 @@ public class Evaluation {
    
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
     
 	@Column
 	private Date dateEval;
@@ -37,10 +37,10 @@ public class Evaluation {
 	private Utilisateur utilisateur; 
     
 	@Column
-	private int nbSignalements;
+	private Integer nbSignalements;
 	
 	@Column
-	private int duree;
+	private Integer duree;
     
 	@Column
 	private String statutContractuel;
@@ -49,7 +49,7 @@ public class Evaluation {
 	private String posteOccupe;
     
 	@Column
-	private int avis;
+	private Integer avis;
     
     /**
      * Default constructor
@@ -57,11 +57,11 @@ public class Evaluation {
     public Evaluation() {
     }
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -81,19 +81,19 @@ public class Evaluation {
 		this.utilisateur = utilisateur;
 	}
 
-	public int getNbSignalements() {
+	public Integer getNbSignalements() {
 		return nbSignalements;
 	}
 
-	public void setNbSignalements(int nbSignalements) {
+	public void setNbSignalements(Integer nbSignalements) {
 		this.nbSignalements = nbSignalements;
 	}
 	
-	 public int getDuree() {
+	 public Integer getDuree() {
 			return duree;
 		}
 
-	public void setDuree(int duree) {
+	public void setDuree(Integer duree) {
 		this.duree = duree;
 	}
    
@@ -113,11 +113,11 @@ public class Evaluation {
 		this.posteOccupe = posteOccupe;
 	}
 
-	public int getAvis() {
+	public Integer getAvis() {
 		return avis;
 	}
 
-	public void setAvis(int avis) {
+	public void setAvis(Integer avis) {
 		this.avis = avis;
 	}
 	

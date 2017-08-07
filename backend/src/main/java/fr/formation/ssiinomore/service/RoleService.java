@@ -10,7 +10,7 @@ import fr.formation.ssiinomore.dao.RoleDao;
 public class RoleService {
 	
 	@Autowired
-	private RoleDao roleDao;
+	private RoleDao dao;
 	
 
 }

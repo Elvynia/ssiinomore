@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.javadock.ssiinomore</groupId>
+	<artifactId>frontend</artifactId>
+	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>fr.javadock</groupId>
+		<artifactId>ssiinomore</artifactId>
+		<version>0.0.1</version>
+	</parent>
+
+	<build>
+		<plugins>
+			<!-- Exécution de 'npm start' lors du build Maven. -->
+			<plugin>
+				<groupId>com.github.eirslett</groupId>
+				<artifactId>frontend-maven-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>install_node_npm</id>
+						<goals>
+							<goal>install-node-and-npm</goal>
+						</goals>
+						<phase>generate-resources</phase>
+					</execution>
+					<execution>
+						<id>run_npm</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<phase>package</phase>
+					</execution>
+				</executions>
+				<configuration>
+					<nodeVersion>v8.1.4</nodeVersion>
+					<npmVersion>5.3.0</npmVersion>
+					<arguments>start</arguments>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
