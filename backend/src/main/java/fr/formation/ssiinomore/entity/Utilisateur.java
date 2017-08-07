@@ -17,6 +17,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 
 /**
@@ -35,11 +37,13 @@ public class Utilisateur {
 	private String adresseIP;
    
 	@OneToMany(fetch=FetchType.LAZY, mappedBy="utilisateur", cascade={CascadeType.REMOVE})
+	@JsonIgnore
 	private List<Evaluation> evaluations;    
     
 	@ManyToOne
 	@JoinColumn(name="id_role", referencedColumnName="id")	
-    private Role role;
+	@JsonIgnore
+	private Role role;
 
     @Column
     private String nom;
