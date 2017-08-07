@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * 
  */
@@ -22,6 +24,7 @@ public class Entreprise {
     private int siren;
     
 	@OneToMany(fetch=FetchType.LAZY, mappedBy="entreprise", cascade={CascadeType.REMOVE})
+	@JsonIgnore
 	private List<Evaluation> evaluations;
     
 	@Column
