@@ -17,6 +17,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 
 /**
@@ -29,12 +31,13 @@ public class Utilisateur {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)   
-    private int id;
+    private Integer id;
 	
 	@Column
 	private String adresseIP;
    
 	@OneToMany(fetch=FetchType.LAZY, mappedBy="utilisateur", cascade={CascadeType.REMOVE})
+	@JsonIgnore
 	private List<Evaluation> evaluations;    
     
 	@ManyToOne
@@ -66,11 +69,11 @@ public class Utilisateur {
     public Utilisateur() {
     }
     
-    public int getId() {
+    public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}    
 
