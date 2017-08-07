@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Entreprise {
 	
 	@Id	
-    private int siren;
+    private Integer siren;
     
 	@OneToMany(fetch=FetchType.LAZY, mappedBy="entreprise", cascade={CascadeType.REMOVE})
 	@JsonIgnore
@@ -34,7 +34,7 @@ public class Entreprise {
     private String sigle;
     
 	@Column
-	private int codePostal;
+	private Integer codePostal;
     
 	@Column
 	private String ville;
@@ -43,7 +43,7 @@ public class Entreprise {
 	private boolean radie;
     
 	@Column
-	private int nbRecherches;
+	private Integer nbRecherches;
     
     /**
      * Default constructor
@@ -51,11 +51,11 @@ public class Entreprise {
     public Entreprise() {
     }
     
-	public int getSiren() {
+	public Integer getSiren() {
 		return siren;
 	}
 
-	public void setSiren(int siren) {
+	public void setSiren(Integer siren) {
 		this.siren = siren;
 	}
 
@@ -83,11 +83,11 @@ public class Entreprise {
 		this.sigle = sigle;
 	}
 
-	public int getCodePostal() {
+	public Integer getCodePostal() {
 		return codePostal;
 	}
 
-	public void setCodePostal(int codePostal) {
+	public void setCodePostal(Integer codePostal) {
 		this.codePostal = codePostal;
 	}
 
@@ -107,11 +107,11 @@ public class Entreprise {
 		this.radie = radie;
 	}
 
-	public int getNbRecherches() {
+	public Integer getNbRecherches() {
 		return nbRecherches;
 	}
 
-	public void setNbRecherches(int nbRecherches) {
+	public void setNbRecherches(Integer nbRecherches) {
 		this.nbRecherches = nbRecherches;
 	}
 }
