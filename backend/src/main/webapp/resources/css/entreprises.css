@@ -1,59 +1,51 @@
-#main_topflop h3, .moreentreprise {
-	text-align: center;
+/***************************************
+ * Liste des entreprises 
+ * 
+ ***************************************/
+#company-lists {
+	display: inline-flex;
 }
 
-#main_topflop h3 {
+#company-lists h3 {
 	margin-bottom: 20px
 }
 
-.moreentreprise {
-	padding-top: 10px;
-	margin-top: 10px;
-	border-top: 1px dotted #aaa;
+#company-lists h3, .moreentreprise {
+	text-align: center;
 }
 
-#tab_top10 tr {
-	background-color: rgba(96, 125, 139, 0.18);
-}
-
-#tab_top10 tr:nth-child(2n) {
-	background-color: rgba(96, 125, 139, 0.55);
-}
-
-#tab_flop10 tr {
-	background-color: rgba(139, 96, 96, 0.18);
-}
-
-#tab_flop10 tr:nth-child(2n) {
-	background-color: rgba(139, 96, 96, 0.55);
-}
-/* Colonne 2 des tableaux => entreprises */
-#tab_top10 tr td:nth-child(2n), #tab_flop10 tr td:nth-child(2n) {
-	width: 250px;
-}
-
-/***************************************
- * Top 10 et Flop 10 
- * 
- ***************************************/
-#tab_top10 {
-	clear: both;
-}
-
-#tab_top10, #tab_flop10 {
+.company-list {
+	flex: 1;
 	margin-left: 10px;
 	margin-right: 10px;
 	margin-bottom: 20px;
-	float: left;
-	width: 450px;
 	border: 1px solid #ccc;
 	padding: 20px;
 	border-radius: 5px;
 	box-shadow: 2px 4px 8px #ccc;
 }
 
-#tab_top10 td, #tab_flop10 td {
+.company-list tr {
+	background-color: rgba(96, 125, 139, 0.18);
+}
+
+.company-list tr:nth-child(2n) {
+	background-color: rgba(96, 125, 139, 0.55);
+}
+
+/* Colonne 2 des tableaux => entreprises */
+.company-list tr td:nth-child(2n) {
+	width: 250px;
+}
+
+.company-list td {
 	padding: 5px;
+}
+
+.moreentreprise {
+	padding-top: 10px;
+	margin-top: 10px;
+	border-top: 1px dotted #aaa;
 }
 
 /***************************************
