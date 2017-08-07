@@ -8,7 +8,7 @@
     "package": "rollup -c",
     "minify": "uglifyjs dist/bundles/ssiinomore.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/ssiinomore.umd.min.js",
     "build": "npm run transpile && npm run package && npm run minify",
-    "start": "npm run build"
+    "start": "npm install && npm run build"
   },
   "author": "",
   "license": "MIT",
