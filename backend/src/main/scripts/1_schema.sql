@@ -34,7 +34,7 @@ CREATE TABLE utilisateur (
 DROP TABLE IF EXISTS `entreprise`;
 
 CREATE TABLE `entreprise` (
-  `siren` int(9) NOT NULL,
+  `siren` varchar(9) NOT NULL,
   `nom` varchar(50) NOT NULL,
   `sigle` varchar(20),
   `codePostal` int(5) NOT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE `evaluation` (
   `avis` int(2) NOT NULL,
   `nbSignalements` int(30) NOT NULL,
   
-  `siren_entreprise` int(9) NOT NULL,
+  `siren_entreprise` varchar(9) NOT NULL,
   `id_utilisateur` int(11) NOT NULL,
   
   PRIMARY KEY (`id`),
