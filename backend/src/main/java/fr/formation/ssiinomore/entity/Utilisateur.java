@@ -18,6 +18,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 
 
@@ -41,8 +43,7 @@ public class Utilisateur {
 	private List<Evaluation> evaluations;    
     
 	@ManyToOne
-	@JoinColumn(name="id_role", referencedColumnName="id")	
-	@JsonIgnore
+	@JoinColumn(name="id_role", referencedColumnName="id")
 	private Role role;
 
     @Column
@@ -58,6 +59,7 @@ public class Utilisateur {
     private String login;
 
     @Column
+    @JsonProperty(access = Access.WRITE_ONLY)
     private String password;
 
     @Column
