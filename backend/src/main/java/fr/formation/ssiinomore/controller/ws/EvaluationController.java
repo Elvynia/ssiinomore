@@ -32,8 +32,8 @@ public class EvaluationController {
 	
 	
 	@RequestMapping(path = {"", "/"}, method = RequestMethod.GET)
-	public List<Evaluation> list(@RequestParam(required=false) final Integer siren) {
-		 return (siren != null && siren >= 0) ? this.service.readAll(siren) : this.service.readAll();
+	public List<Evaluation> list(@RequestParam(required=false) final String siren) {
+		 return (siren != null && !siren.isEmpty()) ? this.service.readAll(siren) : this.service.readAll();
 	}
 	
 	@GetMapping(path={"/{id}"}, produces={"application/json"})

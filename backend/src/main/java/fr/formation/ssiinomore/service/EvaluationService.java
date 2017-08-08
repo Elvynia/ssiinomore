@@ -29,7 +29,7 @@ public class EvaluationService  extends RestService<Evaluation>{
 		return this.dao;
 	}
 	
-	public List<Evaluation> readAll(Integer siren) {
+	public List<Evaluation> readAll(String siren) {
 		final Entreprise entreprise = new Entreprise();
 		entreprise.setSiren(siren);
 		
