@@ -9,6 +9,7 @@ import { CompanyListComponent } from './company-list/company-list.component';
 
 import { Configuration } from './app.constants';
 import { CompanyService } from './company.service';
+import { EvalService } from './eval.service';
 
 @NgModule({
 	imports: [
@@ -24,7 +25,8 @@ import { CompanyService } from './company.service';
 	],
 	providers: [
 		Configuration,
-		CompanyService
+		CompanyService,
+		EvalService
 	],
 	bootstrap:  [AppComponent]
 })
