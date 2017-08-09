@@ -58,7 +58,7 @@ CREATE TABLE `evaluation` (
   `nbSignalements` int(30) NOT NULL,
   
   `siren_entreprise` varchar(9) NOT NULL,
-  `id_utilisateur` int(11) NOT NULL,
+  `id_utilisateur` int(11),
   
   PRIMARY KEY (`id`),
   CONSTRAINT `FK_EVALUATION_ENTREPRISE` FOREIGN KEY (`siren_entreprise`) REFERENCES `entreprise` (`siren`) ON DELETE NO ACTION ON UPDATE NO ACTION,
