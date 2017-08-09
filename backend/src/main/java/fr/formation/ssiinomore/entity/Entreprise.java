@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Entreprise {
 	
 	@Id	
-    private Integer siren;
+    private String siren;
     
 	@OneToMany(fetch=FetchType.LAZY, mappedBy="entreprise", cascade={CascadeType.REMOVE})
 	@JsonIgnore
@@ -51,11 +51,11 @@ public class Entreprise {
     public Entreprise() {
     }
     
-	public Integer getSiren() {
+	public String getSiren() {
 		return siren;
 	}
 
-	public void setSiren(Integer siren) {
+	public void setSiren(String siren) {
 		this.siren = siren;
 	}
 
