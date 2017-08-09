@@ -1,6 +1,7 @@
 
 package fr.formation.ssiinomore.entity;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.Column;
@@ -18,9 +19,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "evaluation")
-public class Evaluation {
+public class Evaluation implements Serializable {
 
-   
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;

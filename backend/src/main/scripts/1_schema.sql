@@ -21,11 +21,9 @@ CREATE TABLE utilisateur (
    `prenom` varchar (50) NOT NULL,
    `dateInscription` date NOT NULL,
    `login` varchar (50) NOT NULL,
-   `password` varchar (50) NOT NULL,
+   `password` varchar (255) NOT NULL,
    `actif` tinyint(1) NOT NULL,
-   
    `id_role` int(11) NOT NULL,
-        
     PRIMARY KEY (`id`),
   CONSTRAINT `FK_UTILISATEUR_ROLE` FOREIGN KEY (`id_role`) REFERENCES `role` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

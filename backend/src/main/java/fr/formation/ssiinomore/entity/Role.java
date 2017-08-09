@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.security.core.GrantedAuthority;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
@@ -19,7 +21,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "role")
-public class Role {
+public class Role implements GrantedAuthority {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	private Integer id;
@@ -59,5 +66,10 @@ public class Role {
 
 	public void setUtilisateurs(List<Utilisateur> utilisateurs) {
 		this.utilisateurs = utilisateurs;
+	}
+
+	@Override
+	public String getAuthority() {
+		return this.getIntitule();
 	}
 }

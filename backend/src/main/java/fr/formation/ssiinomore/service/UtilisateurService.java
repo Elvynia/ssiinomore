@@ -2,6 +2,7 @@
 package fr.formation.ssiinomore.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,7 +12,6 @@ import org.springframework.stereotype.Service;
 import fr.formation.ssiinomore.dao.UtilisateurDao;
 import fr.formation.ssiinomore.entity.Utilisateur;
 
-//@Service("utilisateurService")
 @Service
 public class UtilisateurService extends RestService<Utilisateur> implements UserDetailsService {
 	
@@ -24,9 +24,8 @@ public class UtilisateurService extends RestService<Utilisateur> implements User
 	}
 
 	@Override
-	public UserDetails loadUserByUsername(String arg0) throws UsernameNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		return this.dao.findOne(Example.of(new Utilisateur(username)));
 	}
 
 }
