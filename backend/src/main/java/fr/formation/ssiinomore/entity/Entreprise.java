@@ -40,7 +40,7 @@ public class Entreprise {
 	private String ville;
     
 	@Column
-	private boolean radie;
+	private Boolean radie;
     
 	@Column
 	private Integer nbRecherches;
@@ -99,11 +99,11 @@ public class Entreprise {
 		this.ville = ville;
 	}
 
-	public boolean isRadie() {
+	public Boolean isRadie() {
 		return radie;
 	}
 
-	public void setRadie(boolean radie) {
+	public void setRadie(Boolean radie) {
 		this.radie = radie;
 	}
 

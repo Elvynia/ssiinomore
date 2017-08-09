@@ -13,8 +13,9 @@ import fr.formation.ssiinomore.dao.UtilisateurDao;
 import fr.formation.ssiinomore.entity.Utilisateur;
 
 @Service
-public class UtilisateurService extends RestService<Utilisateur> implements UserDetailsService {
-	
+public class UtilisateurService extends RestService<Utilisateur>
+		implements UserDetailsService {
+
 	@Autowired
 	private UtilisateurDao dao;
 
@@ -24,9 +25,15 @@ public class UtilisateurService extends RestService<Utilisateur> implements User
 	}
 
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		return this.dao.findOne(Example.of(new Utilisateur(username)));
+	public UserDetails loadUserByUsername(String username)
+			throws UsernameNotFoundException {
+		final UserDetails user = this.dao
+				.findOne(Example.of(new Utilisateur(username)));
+		if (user == null) {
+			throw new UsernameNotFoundException(
+					"DAO returned null with login='" + username + "'");
+		}
+		return user;
 	}
 
 }
-

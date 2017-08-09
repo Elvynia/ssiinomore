@@ -64,7 +64,7 @@ public class Utilisateur implements UserDetails {
     private String password;
 
     @Column
-    private boolean actif;
+    private Boolean actif;
     
     /**
      * Default constructor
@@ -72,8 +72,8 @@ public class Utilisateur implements UserDetails {
     public Utilisateur() {
     }
     
-    public Utilisateur(final String nom) {
-    	this.nom = nom;
+    public Utilisateur(final String login) {
+    	this.login = login;
     }
     
     public Integer getId() {
@@ -141,11 +141,11 @@ public class Utilisateur implements UserDetails {
 		this.password = password;
 	}
 
-	public boolean isActif() {
+	public Boolean isActif() {
 		return actif;
 	}
 
-	public void setActif(boolean actif) {
+	public void setActif(Boolean actif) {
 		this.actif = actif;
 	} 
 	
