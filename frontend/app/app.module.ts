@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { CompanyAddComponent } from './company-add/company-add.component';
 import { CompanyEvalComponent } from './company-eval/company-eval.component';
 import { CompanyListComponent } from './company-list/company-list.component';
+import { MessageDirective } from './message/message.directive';
 
 import { Configuration } from './app.constants';
 import { CompanyService } from './company.service';
 import { EvalService } from './eval.service';
+import { MessageService } from './message.service';
 
 @NgModule({
 	imports: [
@@ -21,12 +23,14 @@ import { EvalService } from './eval.service';
 		AppComponent,
 		CompanyAddComponent,
 		CompanyEvalComponent,
-		CompanyListComponent
+		CompanyListComponent,
+		MessageDirective
 	],
 	providers: [
 		Configuration,
 		CompanyService,
-		EvalService
+		EvalService,
+		MessageService
 	],
 	bootstrap:  [AppComponent]
 })

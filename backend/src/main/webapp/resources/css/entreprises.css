@@ -59,13 +59,7 @@ company-list {
  * Ajout d'une entreprise 
  *
 ****************************************/
-label[for="entreprise"], label[for="typecontrat"] {
-	width: 150px;
-	display: inline-block;
-	padding-left: 30px;
-}
-
-#grosbloc_add {
+company-eval form, company-add form {
 	border: 1px solid #ccc;
 	width: 80%;
 	margin: 20px auto;
@@ -73,27 +67,10 @@ label[for="entreprise"], label[for="typecontrat"] {
 	box-shadow: 5px 5px 20px #ccc;
 }
 
-#grosbloc_add h3 {
+company-eval h3, company-add h3 {
 	padding: 20px;
 	display: block;
 	font-size: 150%
-}
-
-#grosbloc_add  label {
-	line-height: 2.5em
-}
-
-/* Décalage pour les années  */
-#grosbloc_add input[name="duree_mois"] {
-	margin-left: 20px;
-}
-/* Décalage pour le poste (simulation d'une tabulation / colonne) */
-#grosbloc_add input[name="poste"] {
-	margin-left: 65px;
-}
-/* Décalage pour les images smiley (simulation d'une tabulation / colonne) */
-#grosbloc_add label[for="avis"] {
-	margin-right: 65px;
 }
 
 #ajout_actions {
@@ -112,4 +89,18 @@ label[for="entreprise"], label[for="typecontrat"] {
 	float: left;
 	width: 400px;
 	margin-bottom: 15px;
+	padding: 10px;
+}
+
+div.avis-wrapper {
+	position: relative;
+}
+
+input#avis {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	opacity: 0;
+	z-index: -1;
+	margin-left: 10px;
 }
