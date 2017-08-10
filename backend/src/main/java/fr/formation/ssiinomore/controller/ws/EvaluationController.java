@@ -2,6 +2,8 @@ package fr.formation.ssiinomore.controller.ws;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,37 +26,44 @@ import fr.formation.ssiinomore.service.EvaluationService;
 @RestController
 @RequestMapping("/evaluation")
 public class EvaluationController {
-	
-	private static final Logger LOGGER = LoggerFactory.getLogger(EvaluationController.class);
-	
+
+	private static final Logger LOGGER = LoggerFactory
+			.getLogger(EvaluationController.class);
+
 	@Autowired
 	private EvaluationService service;
-	
-	
-	@RequestMapping(path = {"", "/"}, method = RequestMethod.GET)
-	public List<Evaluation> list(@RequestParam(required=false) final String siren) {
-		 return (siren != null && !siren.isEmpty()) ? this.service.readAll(siren) : this.service.readAll();
+
+	@RequestMapping(path = { "", "/" }, method = RequestMethod.GET)
+	public List<Evaluation> list(
+			@RequestParam(required = false) final String siren) {
+		return (siren != null && !siren.isEmpty()) ? this.service.readAll(siren)
+				: this.service.readAll();
 	}
-	
-	@GetMapping(path={"/{id}"}, produces={"application/json"})
+
+	@GetMapping(path = { "/{id}" }, produces = { "application/json" })
 	public Evaluation get(@PathVariable final Integer id) {
-		 return this.service.read(id);
+		return this.service.read(id);
 	}
-	
+
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable final Integer id) {
-		 this.service.delete(id);
+		this.service.delete(id);
 	}
-	
-	@PutMapping(path={"", "/"}, consumes={"application/json"})
-	public Evaluation create(@RequestBody final Evaluation evaluation) {
-		 return this.service.create(evaluation);
+
+	@PutMapping(path = { "", "/" }, consumes = { "application/json" })
+	public Evaluation create(@RequestBody final Evaluation evaluation, HttpServletResponse response) {
+		final Evaluation eval = this.service.create(evaluation);
+		if (eval == null) {
+			response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
+		} else {
+			response.setStatus(HttpStatus.CREATED.value());
+		}
+		return eval;
 	}
-	
-	@PostMapping(path={"", "/"}, consumes={"application/json"})
-	public Evaluation update(@RequestBody final Evaluation evaluation)
-	{
+
+	@PostMapping(path = { "", "/" }, consumes = { "application/json" })
+	public Evaluation update(@RequestBody final Evaluation evaluation) {
 		LOGGER.debug(evaluation.getDateEval().toString());
 		return this.service.update(evaluation);
 	}
