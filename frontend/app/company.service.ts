@@ -26,6 +26,18 @@ export class CompanyService {
 		.catch(this.handleError);
 	}
 
+	public add = (company:any): Observable<any> => {
+		return this.httpClient.put(this.apiUrl, {
+			siren: company.siren,
+			nom: company.name,
+			sigle: 'SSII',
+			codePostal: company.postalCode,
+			ville: company.city,
+			nbRecherches: 0,
+			radie: 0
+		})
+	}
+
 	private handleError(error: Response) {
         console.error(error);
         return Observable.throw(error.json() || 'Server error');
