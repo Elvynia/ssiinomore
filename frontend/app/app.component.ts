@@ -7,14 +7,32 @@ import { Component, Renderer, OnInit } from '@angular/core';
 			<company-eval *ngIf="evaluating"></company-eval>
 			<company-add *ngIf="!evaluating"></company-add>
 			<div id="company-lists">
-				<company-list title="Top 10"></company-list>
-				<company-list title="Flop 10"></company-list>
+				<company-list title="Top 10" [filter]="filterTop"></company-list>
+				<company-list title="Flop 10" [filter]="filterFlop"></company-list>
 			</div>
 		</div>
 	`
 })
 export class AppComponent implements OnInit {
 	evaluating: boolean;
+	filterTop = (a:any, b:any) => {
+		if (a.nbEvals > b.nbEvals) {
+			return 1;
+		} else if (a.nbEvals === b.nbEvals) {
+			return 0;
+		} else {
+			return -1;
+		}
+	};
+	filterFlop = (a:any, b:any) => {
+		if (a.nbEvals > b.nbEvals) {
+			return -1;
+		} else if (a.nbEvals === b.nbEvals) {
+			return 0;
+		} else {
+			return 1;
+		}
+	}
 	private listener: Function = (event:HashChangeEvent|string) => {
 		var anchor;
 		if (event instanceof HashChangeEvent) {

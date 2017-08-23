@@ -51,6 +51,10 @@ public class Entreprise {
     public Entreprise() {
     }
     
+    public Integer getNbEvals() {
+    	return this.evaluations.size();
+    }
+    
 	public String getSiren() {
 		return siren;
 	}
